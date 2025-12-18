@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* ❌ REMOVED: The non-standard and warning-causing @theme inline { ... } block */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* 🚀 FIX FOR HYDRATION ERROR (AccessConsoleButton.tsx) */
+/* This ensures the animation is defined on the server/client for a perfect match. */
+
+@keyframes suckPower {
+    0%, 100% {
+        /* Subtle outer glow when resting */
+        /* Use filter: drop-shadow for the glow effect */
+        filter: drop-shadow(0 0 4px #00ffff90) drop-shadow(0 0 1px #00ffff90);
+        transform: scale(1.0);
+    }
+    50% {
+        /* Peak energy pulse */
+        filter: drop-shadow(0 0 8px #00ffff) drop-shadow(0 0 3px #00ffff);
+        transform: scale(1.005); /* Slight breath-like scaling */
+    }
+}
+
+/* Tailwind Utility Class for the Animation */
+.animate-suck-power {
+    animation: suckPower 1.5s infinite ease-in-out;
+}
