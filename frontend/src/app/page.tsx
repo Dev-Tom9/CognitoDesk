@@ -1,9 +1,10 @@
-// frontend/src/app/page.tsx
+"use client"; 
+
 import Link from 'next/link';
 import { Bolt } from 'lucide-react'; 
 import CapabilityCard from '@/components/CapabilityCard'; 
 import LoginButton from '@/components/LoginButton'; 
-import AccessConsoleButton from '@/components/AccessConsoleButton'; // <-- Now working!
+import AccessConsoleButton from '@/components/AccessConsoleButton';
 
 // --- Color Palette ---
 const RICH_BLACK = "#0a0a0a";
@@ -11,7 +12,6 @@ const NEON_VIOLET = "#9370db";
 const ELECTRIC_TEAL = "#00ffff"; 
 const CLEAN_WHITE = "#e0e0e0";
 const DARK_SLATE = "#1f2937";
-
 
 export default function LandingPage() {
     const currentYear = new Date().getFullYear(); 
@@ -41,7 +41,7 @@ export default function LandingPage() {
             {/* FIRST SCROLL: Hero Section (Full Viewport Height) */}
             <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 
-                {/* --- Hero Section: min-h-screen ensures it fills the viewport --- */}
+                {/* --- Hero Section --- */}
                 <section 
                     className="text-center flex flex-col items-center justify-center py-20"
                     style={{ minHeight: 'calc(100vh - 4rem)' }}
@@ -53,7 +53,7 @@ export default function LandingPage() {
                         Leverage our Retrieval-Augmented Generation (RAG) platform to ensure your AI assistant provides accurate, context-aware responses every time.
                     </p>
                     
-                    {/* Access Console CTA Button (The fixed component) */}
+                    {/* Access Console CTA Button */}
                     <AccessConsoleButton />
                 </section>
             
